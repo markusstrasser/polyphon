@@ -1,6 +1,6 @@
 const Spectrum = class {
     constructor(callback = function () {
-        console.log("Your callback could be here")
+        // console.log("Your callback could be here")
     }) {
 
         //SETTING UP WEB AUDIO
@@ -31,11 +31,20 @@ const Spectrum = class {
             stream.onended = () => console.log('Stream ended');
             const source = this.audioCtx.createMediaStreamSource(stream);//set the stream to link to the AudioContext...it's strange I know
             source.connect(this.analyserNode); //this is working in the background...so might need to unplug somehow if performance is issue
-            console.log("STREAM: " + stream, "SOURCE: " + source)
-            console.log('started my Loop -PP');
+            // console.log("STREAM: " + stream, "SOURCE: " + source)
+            // console.log('started my Loop -PP');
             this.gotStream = true;
             callback(); //optional
-        }, console.log);
+        }, function (err) {
+            alert ("Looks like you denied Microphone access or your browser blocked it. \nTo make it work: " +
+
+                "\n\n>In 95% of cases: Click the green/secure bar or green lock icon left of the URL address bar (left of https://dacapo....)\n " +
+                "\n\n If you can't see it: Check the -Settings- in your browser " +
+                "\n\n>In CHROME it's | Settings => Content settings => Microphone| \n" +
+                "\n>You can also try to reload the page and if nothing helps update your browser / delete your cookies \n" +
+                "\n>If you are on Safari or Internet Explorer I lost all hopes for you \n" +
+                "\n Good Luck!")
+        });
 
         this.heighestEnergy;
         this.legitMidis = [];

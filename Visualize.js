@@ -1,4 +1,4 @@
-const Visualizer = class {
+ const Visualizer = class {
     constructor (canv, container) {
         this.canv = canv;
         this.canv.width = container.clientWidth; //works with reference?? outside of vis?
