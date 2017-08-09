@@ -344,7 +344,7 @@
                 chord = notesToChordGuess(Finder.legitNotes.slice(), CHORD_STRUCTURES).split(" "); //intervals in ascending order;
 
                 if (chord[0].length > 0) {
-                    chordDisplayBuffer = 90;
+                    chordDisplayBuffer = 80;
 
                     lastchord = chord.slice();
                 }
@@ -356,11 +356,7 @@
                     chordDisplay.style.background = PP.midiToHSLa(chromaticC.indexOf(chord[0] || lastchord[0]))
                 }
             }
-            console.log(lastchord);
-                // [0] = baseNote, 1 = Name;//
 
-//
-//
             if (chordDisplayBuffer > 0) {
                 chordDisplayBuffer--;
             }
