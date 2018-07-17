@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visual</title>
+    <!-- In <head> -->
+    <link href="nouislider.min.css" rel="stylesheet">
+</head>
+
+    <body>
+    <div id="slider" class="noUi-target noUi-ltr noUi-horizontal">
+
+    </div>
+    <script src="nouislider.min.js"></script>
+    </body>
+</html>
+<script>
+    var slider = document.getElementById('slider');
+
+    noUiSlider.create(slider, {
+        start: [20, 80],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+
+    slider.noUiSlider.on('update', function(){
+        console.log(slider.noUiSlider.get());
+    });
+
+</script>

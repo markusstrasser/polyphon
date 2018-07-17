@@ -40,11 +40,11 @@
         let lastMidi = this.HzToMIDI(35*hzPerBin); //of startMiDi
         arr.forEach( (energy, bin) => {
             let myMidi = this.HzToMIDI(bin * hzPerBin);
-        let binWidth = (myMidi - lastMidi) * 15; //the later the bin the smaller it gets
-        lastMidi = myMidi;
-        let binHeight = this.yHeight(energy, heighestVal);
-        let xPos = xOffset + this.humanizeX(bin, arr.length, hzPerBin) * canv.width;
-        let yPos = canv.height - binHeight* canv.height;
+            let binWidth = (myMidi - lastMidi) * 15; //the later the bin the smaller it gets
+            lastMidi = myMidi;
+            let binHeight = this.yHeight(energy, heighestVal);
+            let xPos = xOffset + this.humanizeX(bin, arr.length, hzPerBin) * canv.width;
+            let yPos = canv.height - binHeight* canv.height;
 
         ctx.fillRect(xPos - binWidth/2, yPos, binWidth , binHeight * canv.height);
     });

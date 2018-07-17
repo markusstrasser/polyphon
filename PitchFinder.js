@@ -179,7 +179,6 @@ const PitchFinder = class {
         for (var divisor = 6; divisor >= 2; divisor-= 1) {
 
             var smallerIdx = Math.round(biggestIdx / divisor); //had problems bc I didn't use .round and JS didn't throw errorMsg
-            //function silently didn't compare float bin values...
             var ratio = this.heighestEnergy / spectrumData[smallerIdx];
             if (ratio > 0.3 && ratio < 8) //if energies are close together...
             {
