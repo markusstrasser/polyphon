@@ -21,9 +21,6 @@ const Spectrum = class {
 
         //Set the Data that doesn't change in the loop (most things except energy)
         this.spectrum = this.dataSetup(); //this [{}] can be extended for Xmappings and other features
-
-        console.log(this.spectrum);
-
         //GETTING MIC ACCESS
         navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
